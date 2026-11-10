@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.5 (09.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.6 (10.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -54,4 +54,9 @@ Versionen
                    (auch Reihenfolge in "Auftrag" für SD/OF), "Bestehenden Kunden
                    übernehmen" im Projekt, Beispieldaten entfernen (SD/OF,
                    Konto-Fenster); keine Datenbank-Änderung
+  1.6  10.11.2026  Graues Design mit der "3" (wie erste Projektsteuerung),
+                   ohne Preise, Angebot/Rechnung, Material und Bestellung;
+                   Knopf "Kalkulation & Angebot" (Baustein 2, Adresse in
+                   config.js als b2Url); Ampel nach Fortschritt gegen Zeit;
+                   Projektübersicht; Kalender mit gleitender Ampelfarbe
 ```
