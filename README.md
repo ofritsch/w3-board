@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.8 (10.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.9 (10.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -70,4 +70,8 @@ Versionen
                    Fortschrittsbalken in Ampel Rot-Orange-Gelb-Grün; Meine ToDos
                    als Wochenansicht mit KW und Tagen; Projekt öffnet immer oben;
                    Board startet mit Auftrag, Produktion und ToDo aufgeklappt
+  1.9  10.11.2026  AV-Stand im Projekt wählbar (Auftrag erteilt / AV läuft /
+                   AV fertig – bereit für Produktion), Karten in der Spalte
+                   Auftrag mit rotem, gelbem bzw. grünem Rand; Aufmaß und CAD
+                   aus den Werkstatt-Schritten entfernt
 ```
