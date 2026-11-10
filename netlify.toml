@@ -1,0 +1,11 @@
+# Netlify veröffentlicht nur den Ordner "site".
+# Kein Build nötig: index.html und config.js werden direkt ausgeliefert.
+[build]
+  publish = "site"
+  command = ""
+
+# Neue Versionen sofort laden, nichts im Browser zwischenspeichern.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
