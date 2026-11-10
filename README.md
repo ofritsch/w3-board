@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.11 (11.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.12 (11.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -12,6 +12,8 @@ Inhalt
   site/index.html                 das Board (Netlify + Supabase)
   site/config.js                  Supabase-Adresse und anon-Schlüssel
   netlify.toml                    Netlify veröffentlicht nur den Ordner site
+  netlify/manifest.webmanifest    App-Einstellung (installierbar, eigenes Fenster)
+  netlify/icon-*.png              App-Symbole mit der „3“
   supabase/supabase.sql           komplette Einrichtung der Datenbank
   supabase/update-1.1-meine-todos.sql   Update von 1.0 auf 1.1
   supabase/update-1.4-dokumente.sql     Update auf 1.4 (alle Dateiarten)
@@ -81,4 +83,7 @@ Versionen
                    und das Feld zurückgesetzt wurde
   1.11 11.11.2026  Montagedatum (und Erstkontakt) im Projekt mit ✕ ganz
                    löschbar, ebenfalls mit Rückfrage „Ja, löschen“
+  1.12 11.11.2026  Vollbild-Knopf in der Kopfzeile (Computer, Android, iPad);
+                   Board als App installierbar: site/manifest.webmanifest und
+                   App-Symbole site/icon-*.png mit der „3“
 ```
