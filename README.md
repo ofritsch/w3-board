@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.10 (10.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.11 (11.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -79,4 +79,6 @@ Versionen
                    Verschieben im Kalender fragen „Ja, ändern“ / „Abbrechen“;
                    behebt, dass beim Eintippen eines Datums zu früh gespeichert
                    und das Feld zurückgesetzt wurde
+  1.11 11.11.2026  Montagedatum (und Erstkontakt) im Projekt mit ✕ ganz
+                   löschbar, ebenfalls mit Rückfrage „Ja, löschen“
 ```
