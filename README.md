@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.9 (10.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.10 (10.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -74,4 +74,9 @@ Versionen
                    AV fertig – bereit für Produktion), Karten in der Spalte
                    Auftrag mit rotem, gelbem bzw. grünem Rand; Aufmaß und CAD
                    aus den Werkstatt-Schritten entfernt
+  1.10 10.11.2026  Termine ändern mit Bestätigung: Datumsfelder im Projekt
+                   (Erstkontakt, Montage), Tagesauswahl im Reiter Termine und
+                   Verschieben im Kalender fragen „Ja, ändern“ / „Abbrechen“;
+                   behebt, dass beim Eintippen eines Datums zu früh gespeichert
+                   und das Feld zurückgesetzt wurde
 ```
