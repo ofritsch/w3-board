@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.12 (11.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.13 (11.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -86,4 +86,6 @@ Versionen
   1.12 11.11.2026  Vollbild-Knopf in der Kopfzeile (Computer, Android, iPad);
                    Board als App installierbar: site/manifest.webmanifest und
                    App-Symbole site/icon-*.png mit der „3“
+  1.13 11.11.2026  AV-Stand (roter, gelber, grüner Rand) auch in der Spalte
+                   Produktion und dort im Projekt wählbar
 ```
