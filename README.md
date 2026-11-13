@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.13 (11.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.14 (13.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -88,4 +88,9 @@ Versionen
                    App-Symbole site/icon-*.png mit der „3“
   1.13 11.11.2026  AV-Stand (roter, gelber, grüner Rand) auch in der Spalte
                    Produktion und dort im Projekt wählbar
+  1.14 13.11.2026  Projektnummer JJ-NNN (automatisch, auf Karten, im Projekt,
+                   in der Suche); Kalender neu: Zeitstrahl über 5 Wochen ab
+                   dieser Woche (Startansicht), Monat mit durchgehenden Balken
+                   und KW, am Handy Terminliste nach KW; Info-Blase mit Nummer,
+                   Kunde und Projekt (Maus darüber bzw. antippen)
 ```
