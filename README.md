@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.14 (13.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.15 (13.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -93,4 +93,7 @@ Versionen
                    dieser Woche (Startansicht), Monat mit durchgehenden Balken
                    und KW, am Handy Terminliste nach KW; Info-Blase mit Nummer,
                    Kunde und Projekt (Maus darüber bzw. antippen)
+  1.15 13.11.2026  Zeitstrahl als Quartal: 3 Reihen à 4 Wochen übereinander,
+                   ‹ › blättert 4 Wochen; Knopf „Aufträge“ blendet Aufträge im
+                   Kalender und die Spalte Auftrag daneben nur bei Bedarf ein
 ```
