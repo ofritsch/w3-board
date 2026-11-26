@@ -17,7 +17,7 @@ jobs:
       - name: Pakete aus npm laden (npm prueft die Pruefsummen)
         run: |
           mkdir -p /tmp/v && cd /tmp/v
-          npm pack @supabase/supabase-js@2.45.4 @fontsource/ibm-plex-sans@5
+          npm pack @supabase/supabase-js@2.45.4 @fontsource/ibm-plex-sans@5 pdfjs-dist@3.11.174
           for f in *.tgz; do mkdir -p "${f%.tgz}" && tar xzf "$f" -C "${f%.tgz}"; done
           ls
       - name: Dateien ablegen
@@ -28,11 +28,14 @@ jobs:
             cp /tmp/v/fontsource-ibm-plex-sans-*/package/files/ibm-plex-sans-$s-$w-normal.woff2 site/vendor/fonts/
           done; done
           cp /tmp/v/fontsource-ibm-plex-sans-*/package/LICENSE site/vendor/fonts/LICENSE-IBM-Plex.txt || true
+          mkdir -p site/vendor/pdfjs-3.11.174
+          cp /tmp/v/pdfjs-dist-3.11.174/package/legacy/build/pdf.min.js /tmp/v/pdfjs-dist-3.11.174/package/legacy/build/pdf.worker.min.js site/vendor/pdfjs-3.11.174/
+          cp /tmp/v/pdfjs-dist-3.11.174/package/LICENSE site/vendor/pdfjs-3.11.174/LICENSE.txt || true
           ls -la site/vendor site/vendor/fonts
       - name: Einchecken
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/vendor
-          git diff --cached --quiet || git commit -m "Bibliothek supabase-js 2.45.4 und Schrift IBM Plex Sans lokal ablegen"
+          git diff --cached --quiet || git commit -m "Bibliotheken (supabase-js, pdf.js) und Schrift lokal ablegen"
           git push
