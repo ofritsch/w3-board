@@ -10,9 +10,19 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="vendor/supabase-2.45.4.js"></script>
 <script src="config.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* IBM Plex Sans lokal (SIL Open Font License), damit das Board ohne Internet gleich aussieht */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url(vendor/fonts/ibm-plex-sans-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 /* Layout: dunkle Kopfzeile mit umrandeter 3, graue Spalten, Ampel nur für Termine und Werkstatt-Fortschritt */
 :root{--bg:#ECEDEE;--sf:#fff;--tx:#1F2326;--mu:#555B61;--bd:#C9CCCF;--ac:#2B2F33;--ac2:#DFE1E3;--ond:#fff;--ok:#2F8A5B;--wip:#B7770E;--hd:#2B2F33}
@@ -541,7 +551,7 @@ function showImg(u,n){const d=$("vdlg");d.classList.add("wide");PV.tok++;d.inner
 $("vdlg").addEventListener("click",e=>{if(e.target.closest("[data-vx]")||e.target==$("vdlg")){$("vdlg").close();return}const z=e.target.closest("[data-pz]");if(z&&PV.doc){PV.z=Math.min(3,Math.max(.5,PV.z+(+z.dataset.pz)*.25));PV.tok++;renderPdf(PV.tok)}});
 $("vdlg").addEventListener("close",()=>{$("vdlg").classList.remove("wide");PV.tok++;if(PV.doc){try{PV.doc.destroy()}catch(_){}}PV.doc=null});
 /* ---- PDF-Ansicht (PDF.js) ---- */
-const PDFV="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/legacy/build/";let PDFJS=null,thumbBusy=false;const PV={doc:null,z:1,tok:0};
+const PDFV="vendor/pdfjs-3.11.174/";let PDFJS=null,thumbBusy=false;const PV={doc:null,z:1,tok:0};
 function loadPdfjs(){if(PDFJS)return PDFJS;PDFJS=new Promise((res,rej)=>{const s=document.createElement("script");s.src=PDFV+"pdf.min.js";s.onload=()=>{try{window.pdfjsLib.GlobalWorkerOptions.workerSrc=PDFV+"pdf.worker.min.js";res(window.pdfjsLib)}catch(e){PDFJS=null;rej(e)}};s.onerror=()=>{PDFJS=null;rej(new Error("pdfjs"))};document.head.appendChild(s)});return PDFJS}
 async function showPdf(u,n){const d=$("vdlg");d.classList.add("wide");PV.tok++;const tok=PV.tok;if(PV.doc){try{PV.doc.destroy()}catch(_){}PV.doc=null}PV.z=1;
 d.innerHTML=`<div class="pvh"><b>${esc(n)}</b><span class="pvc"><button data-pz="-1" aria-label="Verkleinern">−</button><span id="pvz">100 %</span><button data-pz="1" aria-label="Vergrößern">+</button><a class="tag" href="${esc(u)}" target="_blank" rel="noopener">In neuem Tab</a><button data-vx aria-label="Schließen">✕</button></span></div><div id="pvb" class="pvb"><p class="mu">PDF wird geladen …</p></div>`;if(!d.open)d.showModal();
@@ -700,7 +710,7 @@ $("lforgot").onclick=async()=>{const em=$("lem").value.trim();if(!em){$("lmsg").
 const{error}=await SB.auth.resetPasswordForEmail(em,{redirectTo:location.origin+location.pathname});$("lmsg").textContent=error?"Die E-Mail konnte nicht gesendet werden. Bitte später noch einmal versuchen.":"Wir haben dir eine E-Mail mit einem Link zum Festlegen des Passworts geschickt."};
 $("lout").onclick=()=>SB.auth.signOut().then(()=>location.reload());
 /* ---- Meine ToDos (nur für die angemeldete Person) ---- */
-const APPV="1.16";let mySaved=null,myBusy=false,myT=0,MYERR=false,myCh=null;
+const APPV="1.17";let mySaved=null,myBusy=false,myT=0,MYERR=false,myCh=null;
 const myOpenN=()=>MY.filter(x=>!x.d).length;
 function myBtn(){const b=$("myb");b.hidden=!MYON;const n=myOpenN();b.textContent="Meine ToDos"+(n?" · "+n:"")}
 function myCard(){if(!MYON)return "";const td=isoNow(),n=MY.filter(x=>!x.d).length,L=MY.map((x,i)=>({x,i})).filter(a=>!a.x.d&&(!a.x.day||a.x.day<=td)).sort((a,b)=>(a.x.day||"9").localeCompare(b.x.day||"9"));

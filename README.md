@@ -1,7 +1,7 @@
 # w3rkraum Auftragsboard
 
 ```
-w3rkraum Auftragsboard – aktueller Stand: Version 1.16 (13.11.2026)
+w3rkraum Auftragsboard – aktueller Stand: Version 1.17 (26.11.2026)
 ===================================================================
 
 Dieses Repository ist der Stand, der auf w3-planung-test.netlify.app läuft.
@@ -100,4 +100,9 @@ Versionen
                    so breit wie die Spalte Auftrag; Zeitstrahl: 4 Reihen, je
                    Reihe ein Kalendermonat mit Monatsnamen, ‹ › blättert um
                    einen Monat
+  1.17 26.11.2026  Board lädt nichts mehr aus dem Internet: supabase-js, pdf.js
+                   und die Schrift IBM Plex Sans liegen unter site/vendor
+                   (geholt per GitHub-Aufgabe .github/workflows/vendor.yml).
+                   Nötig für den Betrieb ohne Internet im Selbstbetrieb, ohne
+                   Google-Fonts-Abruf auch besser für den Datenschutz
 ```
